@@ -1,10 +1,14 @@
 package com.frank.ffmpeg.activity
 
 import android.content.Intent
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.frank.ffmpeg.BuildConfig
 
 import com.frank.ffmpeg.R
 import com.frank.ffmpeg.adapter.WaterfallAdapter
@@ -23,6 +27,17 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
 
         initView()
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.Q) {
+            try {
+                val uri = Uri.parse("package:" + BuildConfig.APPLICATION_ID)
+                val intent = Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION, uri)
+                startActivity(intent)
+            } catch (e : Exception) {
+                e.printStackTrace()
+//                val intent = Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION)
+//                startActivity(intent)
+            }
+        }
     }
 
     private fun initView() {

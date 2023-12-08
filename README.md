@@ -1,5 +1,8 @@
 # FFmpegAndroid
 
+Thanks for author. It's really a good study example.
+
+
 ### [FFmpeg官方文档](https://ffmpeg.org/)
 ### [FFmpeg编译流程](https://github.com/xufuji456/FFmpegAndroid/blob/master/doc/FFmpeg_compile_shell.md)
 ### [FFmpeg常用命令行](https://github.com/xufuji456/FFmpegAndroid/blob/master/doc/FFmpeg_command_line.md)
